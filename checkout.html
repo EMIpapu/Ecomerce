@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - MegaMarket Pro</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="checkout.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header simplificado -->
+    <header class="header checkout-header">
+        <div class="container">
+            <div class="logo">
+                <h1><i class="fas fa-shopping-bag"></i> MegaMarket Pro</h1>
+            </div>
+            <div class="checkout-progress">
+                <div class="progress-step active">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Carrito</span>
+                </div>
+                <div class="progress-step active">
+                    <i class="fas fa-credit-card"></i>
+                    <span>Pago</span>
+                </div>
+                <div class="progress-step">
+                    <i class="fas fa-check-circle"></i>
+                    <span>Confirmación</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="checkout-main">
+        <div class="container">
+            <div class="checkout-container">
+                <!-- Resumen del pedido -->
+                <div class="order-summary">
+                    <h2><i class="fas fa-receipt"></i> Resumen del pedido</h2>
+                    <div class="order-items" id="checkoutItems">
+                        <!-- Los items se cargarán dinámicamente -->
+                    </div>
+                    <div class="order-totals">
+                        <div class="subtotal">
+                            <span>Subtotal:</span>
+                            <span id="subtotalAmount">$0.00</span>
+                        </div>
+                        <div class="shipping">
+                            <span>Envío:</span>
+                            <span id="shippingAmount">$15.00</span>
+                        </div>
+                        <div class="tax">
+                            <span>Impuestos:</span>
+                            <span id="taxAmount">$0.00</span>
+                        </div>
+                        <div class="total">
+                            <span>Total:</span>
+                            <span id="totalAmount">$0.00</span>
+                        </div>
+                    </div>
+                    <div class="promo-code">
+                        <input type="text" id="promoInput" placeholder="Código promocional">
+                        <button onclick="applyPromoCode()">Aplicar</button>
+                    </div>
+                </div>
+
+                <!-- Formulario de pago -->
+                <div class="payment-form">
+                    <h2><i class="fas fa-credit-card"></i> Información de pago</h2>
+                    
+                    <form id="checkoutForm" onsubmit="processPayment(event)">
+                        <!-- Información personal -->
+                        <div class="form-section">
+                            <h3>Información personal</h3>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="firstName">Nombre *</label>
+                                    <input type="text" id="firstName" name="firstName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastName">Apellido *</label>
+                                    <input type="text" id="lastName" name="lastName" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Teléfono *</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                        </div>
+
+                        <!-- Dirección de envío -->
+                        <div class="form-section">
+                            <h3>Dirección de envío</h3>
+                            <div class="form-group">
+                                <label for="address">Dirección *</label>
+                                <input type="text" id="address" name="address" placeholder="Calle y número" required>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="city">Ciudad *</label>
+                                    <input type="text" id="city" name="city" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="state">Estado/Provincia *</label>
+                                    <input type="text" id="state" name="state" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="zipCode">Código Postal *</label>
+                                    <input type="text" id="zipCode" name="zipCode" required>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="country">País *</label>
+                                <select id="country" name="country" required>
+                                    <option value="">Seleccionar país</option>
+                                    <option value="MX">México</option>
+                                    <option value="US">Estados Unidos</option>
+                                    <option value="ES">España</option>
+                                    <option value="AR">Argentina</option>
+                                    <option value="CO">Colombia</option>
+                                    <option value="PE">Perú</option>
+                                    <option value="CL">Chile</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Método de pago -->
+                        <div class="form-section">
+                            <h3>Método de pago</h3>
+                            <div class="payment-methods">
+                                <div class="payment-method">
+                                    <input type="radio" id="creditCard" name="paymentMethod" value="credit" checked>
+                                    <label for="creditCard">
+                                        <i class="fas fa-credit-card"></i>
+                                        Tarjeta de crédito/débito
+                                    </label>
+                                </div>
+                                <div class="payment-method">
+                                    <input type="radio" id="paypal" name="paymentMethod" value="paypal">
+                                    <label for="paypal">
+                                        <i class="fab fa-paypal"></i>
+                                        PayPal
+                                    </label>
+                                </div>
+                                <div class="payment-method">
+                                    <input type="radio" id="cashOnDelivery" name="paymentMethod" value="cash">
+                                    <label for="cashOnDelivery">
+                                        <i class="fas fa-money-bill-wave"></i>
+                                        Pago contra entrega
+                                    </label>
+                                </div>
+                            </div>
+
+                            <!-- Detalles de tarjeta -->
+                            <div class="card-details" id="cardDetails">
+                                <div class="form-group">
+                                    <label for="cardNumber">Número de tarjeta *</label>
+                                    <input type="text" id="cardNumber" name="cardNumber" placeholder="1234 5678 9012 3456" maxlength="19">
+                                    <div class="card-icons">
+                                        <i class="fab fa-cc-visa"></i>
+                                        <i class="fab fa-cc-mastercard"></i>
+                                        <i class="fab fa-cc-amex"></i>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="expiryDate">Fecha de vencimiento *</label>
+                                        <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/AA" maxlength="5">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="cvv">CVV *</label>
+                                        <input type="text" id="cvv" name="cvv" placeholder="123" maxlength="4">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="cardName">Nombre del titular *</label>
+                                    <input type="text" id="cardName" name="cardName" placeholder="Como aparece en la tarjeta">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Opciones adicionales -->
+                        <div class="form-section">
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="saveInfo" name="saveInfo">
+                                <label for="saveInfo">Guardar información para futuras compras</label>
+                            </div>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="newsletter" name="newsletter">
+                                <label for="newsletter">Suscribirme al newsletter para ofertas especiales</label>
+                            </div>
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="terms" name="terms" required>
+                                <label for="terms">Acepto los <a href="#" target="_blank">términos y condiciones</a> *</label>
+                            </div>
+                        </div>
+
+                        <!-- Botones de acción -->
+                        <div class="form-actions">
+                            <button type="button" class="btn-secondary" onclick="goBack()">
+                                <i class="fas fa-arrow-left"></i> Volver al carrito
+                            </button>
+                            <button type="submit" class="btn-primary">
+                                <i class="fas fa-lock"></i> Finalizar compra
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Loading overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner">
+            <i class="fas fa-spinner fa-spin"></i>
+            <p>Procesando tu pago...</p>
+        </div>
+    </div>
+
+    <!-- Footer simplificado -->
+    <footer class="footer checkout-footer">
+        <div class="container">
+            <div class="security-badges">
+                <div class="security-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>Compra segura</span>
+                </div>
+                <div class="security-item">
+                    <i class="fas fa-lock"></i>
+                    <span>SSL 256-bit</span>
+                </div>
+                <div class="security-item">
+                    <i class="fas fa-undo"></i>
+                    <span>Garantía de devolución</span>
+                </div>
+            </div>
+            <p>&copy; 2024 MegaMarket Pro. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="checkout.js"></script>
+</body>
+</html>
