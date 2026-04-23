@@ -1,40 +1,40 @@
-# 🛒 MegaMarket Pro - Ecommerce Moderno
+# MegaMarket Pro - Ecommerce Moderno
 
 Un ecommerce completo y moderno inspirado en Amazon, MercadoLibre y Temu, desarrollado con HTML5, CSS3 y JavaScript vanilla.
 
-## ✨ Características Principales
+## Características Principales
 
-### 🎨 Diseño y UX
+### Diseño y UX
 - **Diseño responsivo** que se adapta a móviles, tablets y desktop
 - **Interfaz moderna** con colores atractivos y animaciones suaves
 - **Inspirado en grandes plataformas** como Amazon y MercadoLibre
 - **Efectos visuales** con hover, transiciones y animaciones
 
-### 🛍️ Funcionalidades de Ecommerce
-- **✅ Catálogo de productos** con 6 productos integrados
-- **✅ Carrito de compras** interactivo con modal
-- **✅ Sistema de búsqueda** en tiempo real
-- **✅ Filtros por categoría** (Electrónicos, Hogar, Belleza, Herramientas)
-- **✅ Ordenamiento** por precio, nombre y rating
-- **✅ Vista grid/lista** para productos
-- **✅ Sistema de ratings** con estrellas
-- **✅ Control de stock** con avisos de inventario
+### Funcionalidades de Ecommerce
+- **Catálogo de productos** con 6 productos integrados
+- **Carrito de compras** interactivo con modal
+- **Sistema de búsqueda** en tiempo real
+- **Filtros por categoría** (Electrónicos, Hogar, Belleza, Herramientas)
+- **Ordenamiento** por precio, nombre y rating
+- **Vista grid/lista** para productos
+- **Sistema de ratings** con estrellas
+- **Control de stock** con avisos de inventario
 
-### 💳 Sistema de Checkout Completo
-- **✅ Página de checkout** profesional
-- **✅ Formulario de pago** con validación en tiempo real
-- **✅ Múltiples métodos de pago**:
+### Sistema de Checkout Completo
+- **Página de checkout** profesional
+- **Formulario de pago** con validación en tiempo real
+- **Múltiples métodos de pago**:
   - Tarjetas de crédito/débito
   - PayPal
   - Pago contra entrega
-- **✅ Códigos promocionales** funcionales:
+- **Códigos promocionales** funcionales:
   - `DESCUENTO10` → 10% descuento
   - `ENVIOGRATIS` → Envío gratuito
   - `BIENVENIDO` → $20 descuento
-- **✅ Cálculo automático** de impuestos y envío
-- **✅ Página de confirmación** con número de pedido
+- **Cálculo automático** de impuestos y envío
+- **Página de confirmación** con número de pedido
 
-### 🔧 Características Técnicas
+### Características Técnicas
 - **Persistencia de datos** con localStorage
 - **Validación de formularios** completa
 - **Formateo automático** de campos (tarjeta, fecha, teléfono)
@@ -42,7 +42,7 @@ Un ecommerce completo y moderno inspirado en Amazon, MercadoLibre y Temu, desarr
 - **Indicador de progreso** visual para checkout
 - **Simulación realista** de procesamiento de pagos
 
-## 📁 Estructura del Proyecto
+## Estructura del Proyecto
 
 ```
 despliegue_pag/
@@ -63,7 +63,7 @@ despliegue_pag/
 └── README.md              # Este archivo
 ```
 
-## 🚀 Cómo usar
+## Cómo usar
 
 1. **Clonar el repositorio**:
    ```bash
@@ -81,7 +81,7 @@ despliegue_pag/
    - Probar códigos promocionales
    - Completar una compra simulada
 
-## 💎 Productos Incluidos
+## Productos Incluidos
 
 | Producto | Categoría | Precio | Stock |
 |----------|-----------|--------|-------|
@@ -92,7 +92,7 @@ despliegue_pag/
 | OPPO Find N5 5G | Electrónicos | $1299.99 | 6 |
 | Perfume Adolfo Domínguez | Belleza | $79.99 | 20 |
 
-## 🎨 Paleta de Colores
+## Paleta de Colores
 
 - **Primario**: #ff6b35 (Naranja vibrante)
 - **Secundario**: #004e98 (Azul profesional)
@@ -100,13 +100,13 @@ despliegue_pag/
 - **Texto**: #2c3e50 (Gris oscuro)
 - **Fondo**: #f8f9fa (Gris claro)
 
-## 📱 Compatibilidad
+## Compatibilidad
 
-- ✅ Chrome, Firefox, Safari, Edge
-- ✅ Responsive design (móvil, tablet, desktop)
-- ✅ Sin dependencias externas (excepto Font Awesome para iconos)
+- Chrome, Firefox, Safari, Edge
+- Responsive design (móvil, tablet, desktop)
+- Sin dependencias externas (excepto Font Awesome para iconos)
 
-## 🔮 Futuras Mejoras
+## Futuras Mejoras
 
 - [ ] Integración con APIs de pago reales
 - [ ] Base de datos para productos y usuarios
@@ -116,10 +116,10 @@ despliegue_pag/
 - [ ] Comparador de productos
 - [ ] Reseñas y comentarios de usuarios
 
-## 👨‍💻 Autor
+## Autor
 
 Desarrollado para demostrar habilidades en desarrollo web frontend con JavaScript vanilla.
 
-## 📄 Licencia
+## Licencia
 
 Este proyecto es de código abierto y está disponible bajo la licencia MIT.
